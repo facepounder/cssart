@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Art</title>
+<style>
+    :root {
+        --sun-color: #ffd700;
+        --mountain-color: #bada55;
+        --grass-color: #228b22;
+        --cloud-color: #ffffff;
+        --bird-color: #000000;
+        --flower-color: #ff69b4;
+        --butterfly-color1: #ff00ff;
+        --butterfly-color2: #00ffff;
+        --tree-color: #8b4513;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: #87ceeb;
+    }
+
+    .sun {
+        width: 100px;
+        height: 100px;
+        background-color: var(--sun-color);
+        border-radius: 50%;
+        position: relative;
+        top: -50px;
+        left: -50px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(to bottom, var(--sun-color), rgba(255, 255, 255, 0));
+    }
+
+    .mountain {
+        width: 0;
+        height: 0;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 100px solid var(--mountain-color);
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.7;
+    }
+
+    .grass {
+        width: 100%;
+        height: 100px;
+        background-color: var(--grass-color);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0.7;
+    }
+
+    .cloud {
+        width: 100px;
+        height: 50px;
+        background-color: var(--cloud-color);
+        border-radius: 50px;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        opacity: 0.8;
+    }
+
+    .bird {
+        width: 20px;
+        height: 10px;
+        border-top: 2px solid var(--bird-color);
+        border-bottom: 2px solid var(--bird-color);
+        position: absolute;
+        top: 80px;
+        left: 50px;
+        transform: rotate(45deg);
+        opacity: 0.8;
+    }
+
+    .flower {
+        width: 20px;
+        height: 40px;
+        background-color: var(--flower-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 80px;
+        left: 80px;
+        opacity: 0.8;
+    }
+
+    .flower::before,
+    .flower::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        background-color: var(--flower-color);
+        border-radius: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        opacity: 0.8;
+    }
+
+    .flower::before {
+        left: 5px;
+    }
+
+    .flower::after {
+        left: 15px;
+    }
+
+    .flower2 {
+        width: 20px;
+        height: 40px;
+        background-color: var(--flower-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        opacity: 0.8;
+    }
+
+    .flower2::before,
+    .flower2::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        background-color: var(--flower-color);
+        border-radius: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        opacity: 0.8;
+    }
+
+    .flower2::before {
+        left: 5px;
+    }
+
+    .flower2::after {
+        left: 15px;
+    }
+
+    .butterfly {
+        width: 40px;
+        height: 20px;
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        transform: rotate(45deg);
+        overflow: hidden;
+    }
+
+    .butterfly::before,
+    .butterfly::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: var(--butterfly-color1);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .butterfly::before {
+        top: 0;
+        left: 0;
+    }
+
+    .butterfly::after {
+        top: 0;
+        left: 20px;
+        background-color: var(--butterfly-color2);
+    }
+
+    .tree {
+        width: 20px;
+        height: 100px;
+        background-color: var(--tree-color);
+        position: absolute;
+        top: 0;
+        left: 200px;
+    }
+
+    .tree::before,
+    .tree::after {
+        content: '';
+        width: 60px;
+        height: 60px;
+        background-color: var(--tree-color);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .tree::before {
+        top: -30px;
+        left: -20px;
+    }
+
+    .tree::after {
+        top: -30px;
+        left: 20px;
+    }
+
+    .heart {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 1000px;
+    left: 150px;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+}
+
+.heart::before {
+    left: 10px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.star {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    background-color: gold;
+}
+
+
+</style>
+</head>
+<body>
+    <p>yo</p>
+    <div class="sun"></div>
+    <div class="mountain"></div>
+    <div class="grass"></div>
+    <div class="cloud"></div>
+    <div class="bird"></div>
+    <div class="flower"></div>
+    <div class="flower2"></div>
+    <div class="butterfly"></div>
+    <div class="tree"></div>
+    <div class="heart"></div>
+    <div class="star"></div>
+</body>
+</html>
